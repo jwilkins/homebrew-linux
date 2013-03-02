@@ -9,6 +9,24 @@ http://wiki.github.com/mxcl/homebrew/
 This was originally started by Sergio Rubio (http://github.com/rubiojr)
 This is my fork of the project, which seems abandoned.
 
+Goals
+-----
+I expect this to wind up being quite different from Homebrew, 
+because of the difference in targets if nothing else, but Homebrew 
+is an amazingly functional system and the community that supports it
+is every bit as impressive.
+
+Differences
+-----------
+Homebrew wants to live in /usr/local, which is far safer on OS X.
+We're going to use /boom, and see how that works out.
+
+Experiments with LD_PRELOAD and LD_LIBRARY_PATH have been promising,
+but to start, we're going to be trading off disk space for isolation
+and building everything in /boom.  Filesystem links will reduce pure
+redundancy, but if the same version of a specific library is built 
+with different options, the two products will be treated as distinct
+objects.
 
 Installation
 ------------
